@@ -1,0 +1,227 @@
+:root {
+        /* Google fonts */
+        font-family: 'Raleway', sans-serif;
+
+        /* Custom properties */
+        /* Primary color */
+        --clr-primary-orange: hsl(6, 100%, 80%);
+        --clr-primary-red: hsl(335, 100%, 65%);
+
+        /* Neutral colors */
+        --clr-neutral-paleB: hsl(243, 100%, 93%);
+        --clr-neutral-grayishB: hsl(229, 7%, 55%);
+        --clr-neutral-darkB: hsl(228, 56%, 26%);
+        --clr-neutral-veryDarkB: hsl(229, 57%, 11%);
+}
+
+/* General styling / structure */
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+}
+
+body {
+        height: 100vh;
+
+        background-color: var(--clr-neutral-veryDarkB);
+
+        background-image: url(images/bg-desktop.png);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: contain;
+
+        display: flex;
+        justify-content: center; /* Centers along the main axis */
+        align-items: center; /* Centers along the other axis */
+}
+
+.wrapper {
+        width: 100%;
+        display: flex;
+        gap: 2rem;
+        margin: 2rem;
+        justify-content: center;
+}
+
+.left-component, .right-component {
+        background-color: var(--clr-neutral-darkB);
+        border-radius: 0.6rem;
+        padding: 2.5rem 2.8rem;
+}
+
+/* Left-componenet styling */
+.left-component {
+        width: 25.5%;
+        border-top-right-radius: 6rem;
+}
+
+.left-component > img {
+        margin-bottom: 1.8rem;
+}
+
+.icon-bar {
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+        height: 3.1rem;
+}
+
+.icon-wrapper {
+        width: 3.1rem;
+        height: 100%;
+        padding: 0.9rem;
+        border-radius: 0.7rem;
+        background-color: var(--clr-neutral-veryDarkB);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.1s;
+        cursor: pointer;
+}
+
+.icon-wrapper:hover {
+        background-color: hsl(230, 59%, 16%);
+}
+
+/* Right-component styling */
+.right-component {
+        width: 39.25%;
+        position: relative;
+        margin-top: auto;
+}
+
+.right-component > p {
+        font-size: 0.85em;
+        color: var(--clr-neutral-paleB);
+        margin-bottom: 1rem;
+}
+
+.right-component > p > span {
+        font-weight: 700;
+}
+
+/* Styling speech bubble */
+
+.bubble {
+        background-color: white;
+        position: absolute;
+        top: -40%;
+        right: 7.5%;
+        height: 4.5rem;
+        width: 11.2rem;
+        border-radius: 0.5rem;
+        color: var(--clr-neutral-darkB);
+
+        display: flex;
+
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1.3rem;
+}
+
+.right-component::after {
+        position: absolute;
+        content: "";
+        height: 0; 
+        width: 0;
+        border-left: 40px solid transparent;
+        border-top: 40px solid white;
+
+        top: 0%;
+        right: 7.5%;
+}
+
+.bubble p {
+        font-size: 0.85em;
+        font-weight: 700;
+        color: var(--clr-neutral-grayishB);
+}
+
+.bubble span {
+        font-size: 2.9em;
+        font-weight: 700;
+        color: var(--clr-neutral-veryDarkB);
+}
+
+/* Styling progress bar */
+
+.progress-bar {
+        position: relative;
+
+        height: 18px;
+        width: 100%;
+        border-radius: 10px;
+        background-color: var(--clr-neutral-veryDarkB);
+        padding: 3px;
+        margin-bottom: 0.4rem;
+}
+
+.progress-bar-rect {
+        height: 100%;
+        width: 70%;
+
+        border-radius: 10px;
+        background: linear-gradient(to left, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+}
+
+.progress-bar-circle {
+        position: absolute;
+        height: 12px;
+        width: 12px;
+        border-radius: 8px;
+        background-color: white;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 70%;
+        margin-left: -0.9rem;
+}
+
+.progress-bar-container span {
+        color: var(--clr-neutral-paleB);
+        font-weight: 700;
+}
+
+.progress-bar-container span:last-child {
+        float: right;
+}
+
+/* Media queries */
+
+@media only screen and (max-width:1150px) {
+        .wrapper {
+                flex-direction: column;
+                align-items: center;
+        }
+
+        .left-component {
+                width: 40%;
+        }
+
+        .right-component {
+                width: 75%;
+        }
+}
+
+@media only screen and (max-width:750px) {
+        .left-component, .right-component {
+                width: 100%;
+        }
+
+        /* Styling bubble */
+        .bubble {
+                top: 75%;
+                left: 50%;
+                transform: translateX(-50%);
+        }
+
+        .right-component::after {
+                display: none;
+        }
+}
+
+@media only screen and (max-width: 375px) {
+        body {
+                background-image: url(images/bg-mobile.png);
+        }
+}

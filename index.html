@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
+
+		<title>Frontend Mentor | Fylo data storage component</title>
+
+		<!-- Link CSS -->
+		<link rel="stylesheet" href="style.css" />
+		<!-- Google fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<main class="wrapper">
+			<div class="left-component">
+				<img src="images/logo.svg" alt="Fylo logo" />
+				<div class="icon-bar">
+					<div class="icon-wrapper">
+						<img src="images/icon-document.svg" alt="Documents" />
+					</div>
+					<div class="icon-wrapper">
+						<img src="images/icon-folder.svg" alt="Files" />
+					</div>
+					<div class="icon-wrapper">
+						<img src="images/icon-upload.svg" alt="Upload" />
+					</div>
+				</div>
+			</div>
+			<div class="right-component">
+				<p>You’ve used <span>815 GB</span> of your storage</p>
+				<div class="bubble">
+					<span>185</span>
+					<p>GB Left</p>
+				</div>
+				<div class="progress-bar-container">
+					<div class="progress-bar">
+						<div class="progress-bar-rect"></div>
+						<div class="progress-bar-circle"></div>
+					</div>
+					<span>0 GB</span>
+					<span>1000 GB</span>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>
